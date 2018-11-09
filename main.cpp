@@ -20,35 +20,35 @@ int main(){
    ofstream out;
    int ch1, ch2, n;
    while(true){
-		cout << "\n\n1. Добавить\n2. Удалить\n3. Изменить\n4. Сохранить\n5. Загрузить\n6. Вывести\n7. Выход\n";
+		cout << "\n\n1. Dobavit\n2. Udalit\n3. Izmenit\n4. Sohranit\n5. Zagruzit\n6. Vivesti\n7. Vihod\n";
 		while(!(cin >> ch1) && ch1 > 0 && ch1 < 7);
 		if(ch1 == 7) return 0;
-		cout << "1. Машина\n2. Автобус\n3. Мотоцикл\n";
+		cout << "1. Mashina\n2. Avtobus\n3. Motocikl\n";
 		while(!(cin >> ch2) && ch2 > 0 && ch2 < 4);
 		switch(ch1){
 		case 1:
 
 			   switch(ch2){
 			   case 1:
-				   cout << "Марка модель объём цвет тип_КПП\n";
+				   cout << "Marka model obyem zzvet tip_KPP\n";
 				   cin >> ct;
 				   cars.add(ct);
 				   break;
 			   case 2:
-				   cout << "Марка модель объём пункт_назначени сидячие всего_мест\n";
+				   cout << "Marka model obyem punkt_naznacheniya sidyachie vsego_mest\n";
 				   cin >> bt;
 				   bus.add(bt);
 				   break;
 			   case 3:
-				   cout << "Марка модель объём местность мощность\n";
+				   cout << "Marka model obyem mestnost moshnost\n";
 				   cin >> bit;
 				   bikes.add(bit);
 				   break;
 			   }
-			
+
 			break;
 		case 2:
-			cout << "Индекс\n";
+			cout << "РРЅРґРµРєСЃ\n";
 			switch(ch2){
 			   case 1:
 				   while(!(cin >> ch1) && ch1 >= 0 && ch1 < cars.size());
@@ -65,21 +65,21 @@ int main(){
 			   }
 			break;
 		case 3:
-			   cout << "Индекс\n";
+			   cout << "РРЅРґРµРєСЃ\n";
 			   switch(ch2){
 			   case 1:
 				   while(!(cin >> ch1) && ch1 >= 0 && ch1 < cars.size());
-				   cout << "Марка модель объём цвет тип_КПП\n";
+				   cout << "Marka model obyem zzvet tip_KPP\n";
 				   cin >> cars[ch1];
 				   break;
 			   case 2:
 				   while(!(cin >> ch1) && ch1 >= 0 && ch1 < bus.size());
-				   cout << "Марка модель объём пункт_назначени сидячие всего_мест\n";
+				   cout << "Marka model obyem punkt_naznacheniya sidyachie vsego_mest\n";
 				   cin >> bus[ch1];
 				   break;
 			   case 3:
 				   while(!(cin >> ch1) && ch1 >= 0 && ch1 < bikes.size());
-				   cout << "Марка модель объём местность мощность\n";
+				   cout << "Marka model obyem mestnost moshnost\n";
 				   cin >> bikes[ch1];
 				   break;
 			   }
@@ -134,16 +134,16 @@ int main(){
 				   }
 				   break;
 			   }
-			
+
 			in.close();
 			break;
 		case 6:
-			cout << setw(2) << "№" << setw(10) << "Марка" << setw(10) << "Модель" << setw(10) << "Объём";
+			cout << setw(2) << "в„–" << setw(10) << "Marka" << setw(10) << "Model" << setw(10) << "obyem";
 			switch(ch2){
 			   case 1:
-				   cout<< setw(10) << "Цвет" << setw(12) << "тип_КПП";		   
+				   cout<< setw(10) << "zzvet" << setw(12) << "tip_KPP";
 				   for(int i = 0; i < cars.size(); ++i)
-						cout << '\n' << setw(2) << i 
+						cout << '\n' << setw(2) << i
 						<< setw(10)  << cars[i].Brand()
 						<< setw(10)  << cars[i].Model()
 						<< setw(10)  << cars[i].V()
@@ -151,9 +151,9 @@ int main(){
 						<< setw(12)  << cars[i].Type();
 				   break;
 			   case 2:
-				   cout<< setw(10) << "Пункт" << setw(10) << "Сидячих" << setw(9) << "Всего";
+				   cout<< setw(10) << "Punkt" << setw(10) << "Sidyachih" << setw(9) << "Vsego";
 				   for(int i = 0; i < bus.size(); ++i)
-						cout << '\n' << setw(2) << i 
+						cout << '\n' << setw(2) << i
 						<< setw(10)  << bus[i].Brand()
 						<< setw(10)  << bus[i].Model()
 						<< setw(10)  << bus[i].V()
@@ -162,9 +162,9 @@ int main(){
 						<< setw(12)  << bus[i].Cnt();
 				   break;
 			   case 3:
-				   cout<< setw(10) << "Местность" << setw(10) << "Мощность";
+				   cout<< setw(10) << "Mestnost" << setw(10) << "Moshnost";
 				   for(int i = 0; i < bikes.size(); ++i)
-						cout << '\n' << setw(2) << i 
+						cout << '\n' << setw(2) << i
 						<< setw(10)  << bikes[i].Brand()
 						<< setw(10)  << bikes[i].Model()
 						<< setw(10)  << bikes[i].V()
