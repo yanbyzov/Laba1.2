@@ -2,35 +2,35 @@
 
   
 template<typename T>
-struct Element{//элемент списка
-  	T _data; // значенеи элемента
-	Element *_next;	//ссылка на следущий элемент
-	Element *_prev;	//ссылка на предыдущий элемент
+struct Element{//element spiska
+  	T _data; // znachenie elementa
+	Element *_next;	//ssilka na sleduyushiy elenet
+	Element *_prev;	//ssila na predidushiy elenent
 };
 
 template<typename T>
 class List {
 private:
-    Element<T> *_head; //начало списка
-	Element<T> *_tail; //начало списка
-    int _size; //размер
+    Element<T> *_head; //nachalo spiska
+	Element<T> *_tail; //konec spiska
+    int _size; //razmer
 public:
-   List();//конструктор
-   void add(const T &_data);//заносим элемент в конец списка
-   T remove(int index);//удаляем i-ый элемент
-   int size(); //размер
-   T operator[](int index)const;//получение i-го элемента
-   T & operator[](int index);//получение i-го элемента
+   List();//konstructor
+   void add(const T &_data);//zanosim element v konec spiska
+   T remove(int index);//udalyaem perviy element
+   int size(); //razmer
+   T operator[](int index)const;//polucheniye itogo elementa
+   T & operator[](int index);//polucheniye itogo elementa
    void clear();
-   ~List(); //деструктор
+   ~List(); //destructor
 };
 
 template<typename T>
 void List<T>::clear(){
-   for(int i = 0; i < _size; --_size){//проходим по каждому элементу
+   for(int i = 0; i < _size; --_size){//prohodim po kashdomu elemntu
 		   Element<T> *buf = _head;
-		   _head = _head->_next;//переходим к следующему
-		   delete buf;//удаляем предыдущий
+		   _head = _head->_next;//perehodim k sleduyushemu
+		   delete buf;//udalyaem predidushiy
 		}
 }
 
@@ -56,15 +56,15 @@ void List<T>::add(const T &_data){
 
 template<typename T>
 T List<T>::remove(int index){
-	   if(index < 0 || index >= _size){//если неверный  индекс
+	   if(index < 0 || index >= _size){//eski neverniy index
 			return T(0);
 	   }
 		Element<T> *temp = _head;
-		for(int i = 0; i < _size && i < index; ++i) {	// получаем нужный элемент
+		for(int i = 0; i < _size && i < index; ++i) {	// poluchaem nushniy element
 			temp = temp->_next;
 		}
 
-		if (temp == nullptr) {// если не нашли
+		if (temp == nullptr) {// esli ne nasli
 			return T(0); 
 		}
 		if (temp->_prev) {
@@ -94,7 +94,7 @@ int List<T>::size(){
 template<typename T>
 T & List<T>::operator[](int index){
 	    Element<T> *buf = _head;
-		for(int i = 0; i < _size && i < index; ++i) { //ищем нужный элемент
+		for(int i = 0; i < _size && i < index; ++i) { //ishem nushniy element
 			buf = buf->_next;
 		}
 		return buf->_data;
@@ -103,19 +103,17 @@ T & List<T>::operator[](int index){
 template<typename T>
 T List<T>::operator[](int index)const{
 	    Element<T> *buf = _head;
-		for(int i = 0; i < _size && i < index; ++i) { //ищем нужный элемент
+		for(int i = 0; i < _size && i < index; ++i) { //ishem nushniy element
 			buf = buf->_next;
 		}
 		return buf->_data;
 }
 
 template<typename T>
-List<T>::~List(){ //деструктор
-		for(int i = 0; i < _size; --_size){//проходим по каждому элементу
+List<T>::~List(){ //РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+		for(int i = 0; i < _size; --_size){//prohodim po kashdomu
 		   Element<T> *buf = _head;
-		   _head = _head->_next;//переходим к следующему
-		   delete buf;//удаляем предыдущий
+		   _head = _head->_next;//perehodim k sleduyushemu
+		   delete buf;//udalyaem predidushiy
 		}
 }
-
-
